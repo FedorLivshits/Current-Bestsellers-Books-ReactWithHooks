@@ -5,13 +5,13 @@
 
 }
 body{
-  padding: 10px;
-  background: linear-gradient(to right, #ffffff 0%, #b8b6b6 100%);
+  background: linear-gradient(to top, #ffffff 0%, #a8a8a8 100%);
 }
 ul{
   list-style: none;
 }
 a{
+  color: #2a3492;
   text-decoration: none;
 }
 a:hover{
