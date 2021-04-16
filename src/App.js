@@ -1,7 +1,6 @@
 import React from "react"
-import './App.css';
-import './reset.css'
-import BooksApp from "./BooksApp";
+import "./App.css"
+import BooksApp from "./Components/BooksApp";
 
 function App() {
   return (
