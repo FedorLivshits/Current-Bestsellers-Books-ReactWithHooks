@@ -18,7 +18,6 @@
     justify-content: space-between;
     padding-bottom: 30px;
     background: linear-gradient(to left, #18225a 0%, #0f1547 100%);
-    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
 }
 
 .title {
@@ -49,12 +48,10 @@
 
 .book-card.full {
     min-width: 600px;
-    background-color: white;
     padding: 15px;
     margin: 15px;
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-around;
     border-radius: 5px;;
 }
@@ -63,7 +60,10 @@
 }
 
 .book-img {
-    height: 310px;
+    min-height: 310px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .book-info {
@@ -107,15 +107,18 @@ p.book-desc {
 img {
     width: 200px;
     text-align: center;
+    cursor: pointer;
 }
-
+.img-full{
+    width: 260px;
+}
 .content {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.show-more__btn {
+.default__app-btn {
     background-color: #171f66;
     color: white;
     font-size: 16px;
@@ -126,11 +129,12 @@ img {
     cursor: pointer;
 }
 
-.show-more__btn:hover {
+.default__app-btn:hover {
     background-color: #0e1444;
     transition: 0.3s;
 }
 
+/*.........................Modal.....................................*/
 .modal {
     height: 100vh;
     width: 100vw;
@@ -209,7 +213,6 @@ input:checked + .slider:before {
     -ms-transform: translateX(26px);
     transform: translateX(26px);
 }
-
 /* Rounded sliders */
 .slider.round {
     border-radius: 34px;
@@ -218,6 +221,8 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
+/*....................Dark theme..............................*/
 .header.dark{
     background: linear-gradient(to left, #131a45 0%, #13163e 100%);
 }
@@ -228,14 +233,16 @@ input:checked + .slider:before {
     background-color: rgb(24,25,26);
     color: white;
 }
-.show-more__btn.dark{
+.default__app-btn.dark{
     background: #13163e ;
+}
+.default__app-btn.dark:hover{
+    background: #20277b;
 }
 .book-title-full.dark{
     background: #13163e ;
 }
 .book-card.full.dark{
-    background-color: rgb(24,25,26);
     color: white;
 }
 .modal__content.dark{

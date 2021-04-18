@@ -4,12 +4,11 @@ import BooksApp from "./Components/BooksApp";
 import BooksAppProvider from "./Components/ThemeContext";
 
 function App() {
-  return (
-
-  <BooksAppProvider>
-    <BooksApp/>
-  </BooksAppProvider>
-  );
+    return (
+        <BooksAppProvider>
+            <BooksApp/>
+        </BooksAppProvider>
+    );
 }
 
 export default App;

@@ -19,4 +19,9 @@ a{
 a:hover{
   color: black;
 }
-
+a.dark{
+  color: #3a45ad;
+}
+a.dark:hover{
+  color: #ffffff;
+}
