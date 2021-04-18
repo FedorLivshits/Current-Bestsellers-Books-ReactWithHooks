@@ -45,7 +45,6 @@
     padding: 15px;
     margin: 15px;
     border-radius: 5px;;
-    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
 }
 
 .book-card.full {
@@ -58,7 +57,6 @@
     align-items: center;
     justify-content: space-around;
     border-radius: 5px;;
-    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
 }
 .book-info-full {
     width: 200px;
@@ -157,5 +155,89 @@ img {
     padding: 20px;
     border-radius: 5px;
     background-color: white;
-    /*width: 50vw;*/
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: rgb(12, 23, 94);
+}
+
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+.header.dark{
+    background: linear-gradient(to left, #131a45 0%, #13163e 100%);
+}
+.current__books-app.dark {
+    background: linear-gradient(to top, #404040 0%, #18191a 100%);
+}
+.book-card.dark{
+    background-color: rgb(24,25,26);
+    color: white;
+}
+.show-more__btn.dark{
+    background: #13163e ;
+}
+.book-title-full.dark{
+    background: #13163e ;
+}
+.book-card.full.dark{
+    background-color: rgb(24,25,26);
+    color: white;
+}
+.modal__content.dark{
+    background-color: rgb(24,25,26);
 }

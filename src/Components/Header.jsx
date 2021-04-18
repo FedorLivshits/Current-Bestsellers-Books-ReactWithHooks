@@ -1,8 +1,10 @@
-import React from "react"
+import React, {useContext} from "react"
+import {ThemeContext} from "./ThemeContext";
 
 function Header() {
+    const {theme} = useContext(ThemeContext);
     return (
-        <header className="header">
+        <header className={`header ${theme}`}>
             <h1 className="title">
                 Actual <br/>
                 books <br/>
@@ -16,6 +18,7 @@ function Header() {
                     {" "}
                 </div>
             </h1>
+
         </header>
     )
 }

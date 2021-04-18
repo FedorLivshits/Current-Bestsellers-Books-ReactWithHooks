@@ -1,8 +1,9 @@
-import React, {useEffect, useState} from "react"
+import React, {useContext, useEffect, useState} from "react"
 import axios from "axios";
 import preloader from "../assets/images/preloader.svg"
 import BookCard from "./BookCard";
 import Header from "./Header";
+import {ThemeContext} from "./ThemeContext";
 
 
 function BooksApp() {
@@ -10,6 +11,8 @@ function BooksApp() {
     const [isLoading, setIsLoading] = useState(false)
     const [activeModal, setActiveModal] = useState(false)
     const[bookCard, setBookCard] = useState([])
+
+    const {theme} = useContext(ThemeContext);
 
     const showFullBookCard = (rank) =>{
         let book = books.filter(b => b.rank === rank)
@@ -36,9 +39,11 @@ function BooksApp() {
 
     return (
         <>
-        <section className={isLoading ? "current__books-app loading" : "current__books-app"}>
+        <section className={isLoading ? `current__books-app loading  ${theme}` : `current__books-app  ${theme}`}>
             <Header/>
+
             <div className="container">
+                <Switcher/>
                 <section className="app__inner">
                     {isLoading
                         ?
@@ -60,9 +65,10 @@ function BooksApp() {
 }
 
 function Modal({activeModal, setActiveModal, children}) {
+    const {theme} = useContext(ThemeContext);
     return (
         <div className={activeModal ? "modal active" : "modal"} onClick={() => setActiveModal(false)}>
-            <div className="modal__content" onClick={event => event.stopPropagation()}>
+            <div className={`modal__content ${theme}`} onClick={event => event.stopPropagation()}>
                 {children}
             </div>
         </div>
@@ -70,14 +76,15 @@ function Modal({activeModal, setActiveModal, children}) {
 }
 
 function FullBookCard({bookCard}) {
+    const {theme} = useContext(ThemeContext);
     if (bookCard.length) {
         const {rank, description, title, author, book_image, buy_links, weeks_on_list, publisher} = bookCard[0]
         return (
             <>
-            <h2 className="book-title-full">
+            <h2 className={`book-title-full  ${theme}`}>
                 <span>{rank}</span>. {title}
             </h2>
-            <article className="book-card full" key={rank}>
+            <article className={`book-card full ${theme}`} key={rank}>
                 <div className="book-img">
                     <img src={book_image} alt={title}/>
                 </div>
@@ -106,6 +113,15 @@ function FullBookCard({bookCard}) {
     }
 }
 
+function Switcher() {
+    const {changeTheme} = useContext(ThemeContext);
+    return (
+        <label className="switch"  >
+            <input type="checkbox" onClick={changeTheme}/>
+            <span className="slider round"></span>
+        </label>
 
+    )
+}
 
 export default BooksApp;
