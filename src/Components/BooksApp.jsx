@@ -73,18 +73,21 @@ function FullBookCard({bookCard}) {
     if (bookCard.length) {
         const {rank, description, title, author, book_image, buy_links, weeks_on_list, publisher} = bookCard[0]
         return (
-            <article className="book-card" key={rank}>
+            <>
+            <h2 className="book-title-full">
+                <span>{rank}</span>. {title}
+            </h2>
+            <article className="book-card full" key={rank}>
                 <div className="book-img">
                     <img src={book_image} alt={title}/>
                 </div>
-                <div className="book-info">
-                    <h2 className="book-title">
-                        <span>{rank}</span>. {title}
-                    </h2>
-                    <p className="book-author">By: {author}</p>
-                    <p className="book-desc">{description}</p>
-                    <p className="book__buy-now">Buy now:</p>
-                    <ul className="buy_now">
+                <div className="book-info-full">
+                    <p className="book-author "><b>Author:</b> {author}</p>
+                    <p className="book-author "><b>Publisher:</b> {publisher}</p>
+                    <p className="book-desc ">{description}</p>
+                    <p className="weeks-on-list "><b>Weeks on list:</b> {weeks_on_list}</p>
+                    <p className="book__buy-now ">Buy now:</p>
+                    <ul className="buy_now ">
                         {buy_links.map(link => {
                             return (
                                 <li key={link.url} className="buy_now-item"><a
@@ -95,6 +98,7 @@ function FullBookCard({bookCard}) {
                     </ul>
                 </div>
             </article>
+                </>
         )
     }
     if (!bookCard.length) {

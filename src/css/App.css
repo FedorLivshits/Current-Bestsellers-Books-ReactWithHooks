@@ -44,31 +44,54 @@
     background-color: white;
     padding: 15px;
     margin: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     border-radius: 5px;;
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
 }
 
-.book-img {
-    height: 310px;
-    margin: 10px;
-    padding-right: 15px;
+.book-card.full {
+    min-width: 600px;
+    background-color: white;
+    padding: 15px;
+    margin: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
 }
-p{
+.book-info-full {
     width: 200px;
 }
-.book-title {
 
+.book-img {
+    height: 310px;
+}
+
+.book-info {
+    width: 200px;
+    text-align: center;
+}
+
+.book-title {
+    min-height: 60px;
     padding-top: 15px;
     margin-bottom: 20px;
 }
-
-.book-author {
-
+.book-title-full{
+    min-height: 60px;
     margin-bottom: 20px;
-    font-weight: bold;
+    background: #0b0d4c;
+    color: white;
+    font-size: 20px;
+    padding: 15px 0 15px 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px
+}
+.book-author {
+    min-height: 50px;
+    margin-bottom: 20px;
 }
 
 p.book-desc {
@@ -80,7 +103,9 @@ p.book-desc {
     font-weight: bold;
     margin-bottom: 10px;
 }
-
+.weeks-on-list{
+    margin-bottom: 15px;
+}
 img {
     width: 200px;
     text-align: center;
@@ -91,7 +116,8 @@ img {
     flex-wrap: wrap;
     justify-content: center;
 }
-.show-more__btn{
+
+.show-more__btn {
     background-color: #171f66;
     color: white;
     font-size: 16px;
@@ -101,10 +127,12 @@ img {
     outline: none;
     cursor: pointer;
 }
-.show-more__btn:hover{
+
+.show-more__btn:hover {
     background-color: #0e1444;
     transition: 0.3s;
 }
+
 .modal {
     height: 100vh;
     width: 100vw;
@@ -129,5 +157,5 @@ img {
     padding: 20px;
     border-radius: 5px;
     background-color: white;
-    width: 50vw;
+    /*width: 50vw;*/
 }
